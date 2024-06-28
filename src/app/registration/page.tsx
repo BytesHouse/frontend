@@ -1,6 +1,6 @@
 import { Footer, Header } from "@/components";
 
-export const page = () => {
+const Page = () => {
   return (
     <>
       <Header />
@@ -11,3 +11,4 @@ export const page = () => {
     </>
   );
 };
+export default Page;
