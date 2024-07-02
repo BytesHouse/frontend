@@ -1,17 +1,19 @@
-import { Footer, Header } from "@/components";
+
+import { BetsFooter } from "./BetsFooter";
+import { BetsHeader } from "./BetsHeader";
 
 export default function BetsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
-    <html lang="en">
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <div>
+      <BetsHeader/>
+    {children}
+        <BetsFooter/>
+  </div>
+    
   );
 }
