@@ -1,4 +1,4 @@
-
+import ProtectedProvider from "@/components/ProtectedProvider";
 import { BetsFooter } from "./BetsFooter";
 import { BetsHeader } from "./BetsHeader";
 
@@ -7,13 +7,11 @@ export default function BetsLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
-    <div>
-      <BetsHeader/>
-    {children}
-        <BetsFooter/>
-  </div>
-    
+    <ProtectedProvider>
+      <BetsHeader />
+      {children}
+      <BetsFooter />
+    </ProtectedProvider>
   );
 }

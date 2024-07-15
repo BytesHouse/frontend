@@ -1,12 +1,14 @@
-
+"use client";
 import { Footer, Header } from "@/components";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
-
+  const [state, setState] = useState(false);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between py-12">
-        <Header/>
+      <Header />
+      {state ? <div>Regist</div> : <div>Login</div>}
       <form className="flex flex-col gap-3 w-[85%] lg:w-[30%]">
         <label htmlFor="">Login</label>
         <input
@@ -28,17 +30,17 @@ export default function Home() {
           <input
             className="border py-4 rounded-2xl bg-gradient-to-r from-red-600 to-red-400 border-transparent"
             type="submit"
-            value="Enter" 
+            value="Enter"
           />
           <Link
             className="text-center border py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-400 border-transparent"
-            href= "/registration"
+            href="/registration"
           >
             Registration
           </Link>
         </div>
       </form>
-        <Footer/>
+      <Footer />
     </main>
   );
 }
